@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified"
+            targetNamespace="http://www.adventure-works.com"
+            xmlns="http://www.adventure-works.com"
+>
+    <xsd:element name="raiz">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="clientes"/>
+                <xsd:element ref="pedidos"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+
+    <xsd:element name="clientes">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="cliente" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="cliente">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="CompanyName" type="xsd:string"/>
+                <xsd:element name="ContactName" type="xsd:string"/>
+                <xsd:element name="ContactTitle" type="xsd:string"/>
+                <xsd:element name="Phone" type="xsd:string"/>
+                <xsd:element ref="FullAddress"/>
+                <xsd:element name="Fax" minOccurs="0"/>
+
+            </xsd:sequence>
+            <xsd:attribute name="clienteID" type="xsd:string"/>
+        </xsd:complexType>
+    </xsd:element>
+
+
+
+    <xsd:element name="FullAddress">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Address" type="xsd:string"/>
+                <xsd:element name="City" type="xsd:string"/>
+                <xsd:element name="Region" type="xsd:string"/>
+                <xsd:element name="PostalCode" type="xsd:positiveInteger"/>
+                <xsd:element name="Country" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+
+    <xsd:element name="pedidos">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="pedido" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="pedido">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="clienteID" type="xsd:string"/>
+                <xsd:element name="EmployeeID" type="xsd:positiveInteger"/>
+                <xsd:element name="pedidoDate" type="xsd:string"/>
+                <xsd:element name="RequiredDate" type="xsd:string"/>
+                <xsd:element ref="ShipInfo"/>
+            </xsd:sequence>
+            <xsd:attribute name="clienteID" type="xsd:string"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="ShipInfo">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="ShipVia" type="xsd:positiveInteger"/>
+                <xsd:element name="Freight" type="xsd:double"/>
+                <xsd:element name="ShipName" type="xsd:string"/>
+                <xsd:element name="ShipAddress" type="xsd:string"/>
+                <xsd:element name="ShipCity" type="xsd:string"/>
+                <xsd:element name="ShipRegion" type="xsd:string"/>
+                <xsd:element name="ShipPostalCode" type="xsd:positiveInteger"/>
+                <xsd:element name="ShipCountry" type="xsd:string"/>
+            </xsd:sequence>
+            <xsd:attribute name="ShippedDate" type="xsd:string"/>
+        </xsd:complexType>
+    </xsd:element>
+
+
+</xsd:schema>
+
+

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified"
+            targetNamespace="http://www.cebem.net/Ejercicio4"
+            xmlns="http://www.cebem.net/Ejercicio4">
+
+    <xsd:element name="facturacion">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="empresa"/>
+                <xsd:element ref="factura" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="empresa">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="razonsocial"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="razonsocial">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="nombre" type="xsd:string"/>
+                <xsd:element name="direccion" type="xsd:string"/>
+                <xsd:element name="codpostal" type="xsd:string"/>
+                <xsd:element name="poblacion" type="xsd:string"/>
+                <xsd:element name="NIF" type="xsd:string"/>
+            </xsd:sequence>
+            <xsd:attribute name="tipus" type="string"/>
+        </xsd:complexType>
+    </xsd:element>
+
+
+
+    <xsd:element name="factura">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="cliente"/>
+            </xsd:sequence>
+            <xsd:attribute name="numero" type="xsd:positiveInteger"/>
+        </xsd:complexType>
+    </xsd:element>
+
+
+    <xsd:element name="cliente">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="razonsocial"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="razonsocial">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="cliente"/>
+                <xsd:element ref="recibo"/>
+                <xsd:element name="fecha" type="xsd:string"/>
+                <xsd:element name="subtotal" type="xsd:positiveInteger"/>
+                <xsd:element name="iva" type="xsd:positiveInteger"/>
+                <xsd:element name="total" type="xsd:double"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+
+
+
+
+</xsd:schema>

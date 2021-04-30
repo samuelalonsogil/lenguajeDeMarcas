@@ -1,0 +1,66 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs = "http://www.w3.org/2001/XMLSchema">
+
+    <!--declaracion de elemento raiz matricula-->
+    <xs:element name="matricula">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="personal"/>
+                <xs:element ref="pago"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--declaracion de personal-->
+    <xs:element name="personal">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="dni" type="xs:string"	/>
+                <xs:element name="nombre" type="xs:string" />
+                <xs:element name="titulacion" type="xs:string" />
+                <xs:element name="curso_academico" type="xs:string"/>
+                <xs:element ref="domicilios" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--declaracion de pago-->
+    <xs:element name="pago">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tipo_matricula"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--declaracion de tipo_matricula-->
+    <xs:element name="tipo_matricula" type="xs:string"/>
+
+    <!--declaracion de elemento domicilios-->
+    <xs:element name="domicilios" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="domicilio" type="datDomi" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--declaracion de datDomi-->
+    <xs:complexType name="datDomi">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="tipo" type="opciones"	/>
+    </xs:complexType>
+
+    <!--tipo de dato enumerado LLAMADO opciones para el atributo-->
+    <xs:simpleType name="opciones" >
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="familiar"></xs:enumeration>
+            <xs:enumeration value="habitual" ></xs:enumeration>
+            <xs:enumeration value="ocasional" ></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+</xs:schema>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified"
+
+           targetNamespace="http://www.cebem.net/catalogoLibros"
+            xmlns:cat="http://www.cebem.net/catalogoLibros">
+
+    <!--elemento raíz catalogo-->
+    <xsd:element name="catalogo">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="cat:libro" maxOccurs="unbounded"></xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+
+    <!--elemento libro-->
+    <xsd:element name="libro">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="titulo" type="cat:tipoNombre"/>
+                <xsd:element name="autor" type="cat:tipoNombre" maxOccurs="unbounded"/>
+                <xsd:element ref="cat:fecha"/>
+                <xsd:element name="isbn" type="cat:tipoIsbn"/>
+                <xsd:element name="editor" type="cat:tipoNombre"/>
+            </xsd:sequence>
+            <xsd:attribute name="categoria" use="required" type="cat:tipoCategoria"/>
+            <xsd:attribute name="stock" use="optional" default="false" type="xsd:boolean"/>
+            <xsd:attribute name="revisor" type="cat:tipoNombre"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--elemento fecha-->
+    <xsd:element name="fecha">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="mes" type="cat:tipoMes" minOccurs="0"/>
+                <xsd:element name="año" type="cat:tipoAño"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--type tipoNombre-->
+    <xsd:simpleType name="tipoNombre">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="0"/>
+            <xsd:maxLength value="100"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!--elemento tipoMes-->
+    <xsd:simpleType name="tipoMes">
+        <xsd:restriction base="xsd:positiveInteger">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="12"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!--elemento tipoAño-->
+    <xsd:simpleType name="tipoAño">
+        <xsd:restriction base="xsd:positiveInteger">
+            <xsd:minInclusive value="1900"/>
+            <xsd:maxInclusive value="2011"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!--elemento tipoIsbn-->
+    <xsd:simpleType name="tipoIsbn">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="13"/>
+            <xsd:maxLength value="17"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!--definicion de tipo de dato tipoCategoria-->
+    <xsd:simpleType name="tipoCategoria">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="autobiografia"/>
+            <xsd:enumeration value="no ficcion"/>
+            <xsd:enumeration value="ficcion"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+
+
+
+</xsd:schema>

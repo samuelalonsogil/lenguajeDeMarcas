@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified"
+            xmlns:per="http://www.prueba.es/persona"
+            targetNamespace="http://www.prueba.es/persona">
+
+
+    <xsd:element name="persona">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="per:datos"></xsd:element>
+                <xsd:element name="comentario" minOccurs="0" type="xsd:string"></xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="nacimiento" type="xsd:date" use="optional"></xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="datos">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="nombre" type="xsd:string"></xsd:element>
+                <xsd:element name="apellidos" type="xsd:string"></xsd:element>
+                <xsd:element name="dni" type="xsd:string"></xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+</xsd:schema>

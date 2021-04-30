@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified">
+
+    <!--elemento raíz-->
+    <xsd:element name="factura">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="datos_empresa"></xsd:element>
+                <xsd:element ref="datos_cliente"></xsd:element>
+                <xsd:element ref="datos_factura"></xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="n_fac" use="required" type="tipoID"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--elemento datos_empresa-->
+    <xsd:element name="datos_empresa">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="nombre" type="xsd:string"/>
+                <xsd:element name="dir" type="xsd:string"/>
+                <xsd:element ref="poblacion"/>
+                <xsd:element name="provincia" type="xsd:string"/>
+                <xsd:element name="cif" type="xsd:ID"/>
+                <xsd:element ref="telefono"/>
+                <xsd:element ref="fax" minOccurs="0"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+
+    <!--elemento tipoPoblacion con contenido y atributo-->
+    <xsd:element name="poblacion">
+        <xsd:complexType>
+            <xsd:simpleContent>
+                <xsd:extension base="xsd:string">
+
+                    <xsd:attribute name="cod_postal" type="xsd:int"/>
+                </xsd:extension>
+            </xsd:simpleContent>
+        </xsd:complexType>
+    </xsd:element>
+
+
+    <!--elemento telefono-->
+    <xsd:element name="telefono">
+        <xsd:complexType>
+            <xsd:attribute name="num_tel" type="xsd:string" fixed="986300707"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="fax">
+        <xsd:complexType>
+            <xsd:attribute name="num_fax" type="xsd:int" fixed="696550102"/>
+        </xsd:complexType>
+    </xsd:element>
+
+
+    <!--elemento datos_cliente-->
+    <xsd:element name="datos_cliente">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="nombre" type="xsd:string"/>
+                <xsd:element name="dir_env" type="xsd:string"/>
+                <xsd:element ref="poblacion"/>
+                <xsd:element name="provincia" type="xsd:string"/>
+            </xsd:sequence>
+            <xsd:attribute name="n_cli" use="required" type="tipoID"></xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+
+    <!--elemento datos_factura-->
+    <xsd:element name="datos_factura">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="fecha" type="xsd:date"/>
+                <xsd:element ref="linea" maxOccurs="unbounded"/>
+                <xsd:element name="base" type="tipoFlotante"/>
+                <xsd:element name="cuota_iva" type="tipoFlotante"/>
+                <xsd:element name="total" type="tipoFlotante"/>
+            </xsd:sequence>
+           <xsd:attributeGroup ref="cuatro"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--elemento linea-->
+    <xsd:element name="linea">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="ref" type="tipoRef"/>
+                <xsd:element name="desc" type="tipoDesc"/>
+                <xsd:element name="cant" type="xsd:int"/>
+                <xsd:element name="precio" type="tipoFlotante"/>
+                <xsd:element name="importe" type="tipoFlotante"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+
+    <!--definicion tipoFlotante-->
+    <xsd:simpleType name="tipoFlotante">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:fractionDigits value="2"/>
+            <xsd:totalDigits value="7"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!--definicion grupo atr cuatro-->
+    <xsd:attributeGroup name="cuatro">
+        <xsd:attribute name="n_ped" type="tipoID" use="required"/>
+        <xsd:attribute name="iva" type="tipoIVA" use="required"/>
+        <xsd:attribute name="f_pago" type="tipoPago" use="required"/>
+        <xsd:attribute name="moneda" type="xsd:string" fixed="euro"/>
+    </xsd:attributeGroup>
+
+    <!--declaracion tipoID-->
+    <xsd:simpleType name="tipoID">
+        <xsd:restriction base="xsd:int">
+            <xsd:totalDigits value="4"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!--tipoPago-->
+    <xsd:simpleType name="tipoPago">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="efectivo"/>
+            <xsd:enumeration value="tarjeta"/>
+            <xsd:enumeration value="plazos"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!--tipoIVA-->
+    <xsd:simpleType name="tipoIVA">
+        <xsd:restriction base="xsd:positiveInteger">
+           <xsd:totalDigits value="2"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    
+    <!--tipoRef-->
+    <xsd:simpleType name="tipoRef">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="15"/>
+            <xsd:minLength value="5"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    
+    <!--tipoDescripcion-->
+    <xsd:simpleType name="tipoDesc">
+        <xsd:restriction base="xsd:string">
+
+        </xsd:restriction>
+    </xsd:simpleType>
+
+
+
+</xsd:schema>

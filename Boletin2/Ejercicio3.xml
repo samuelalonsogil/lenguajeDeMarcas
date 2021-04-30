@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--•	Se debe definir “tipoPersona” (los elementos “persona” son de este tipo)
+“info” (los elementos “datos” son de este tipo). -->
+
+<persona nacimiento="1999-10-20" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="Ejercicio3.xsd" >
+    <datos>
+        <nombre>Pepe</nombre>
+        <apellidos>Garcia</apellidos>
+        <dni>F25390952</dni>
+    </datos>
+    <comentario>buena gente...</comentario>
+</persona>

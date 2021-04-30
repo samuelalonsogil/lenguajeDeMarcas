@@ -1,0 +1,59 @@
+#cuadro1{
+	border-color: black ;
+	border-width: thin;
+	border-style: solid;
+	float: left;
+	width: 10%;
+	height: 100px;
+}
+
+#cuadro2{
+	border-color: black ;
+	border-width: thin;
+	border-style: solid;
+	float: left;
+	width: 10%;
+	height: 100px;
+	clear: right;
+
+}
+
+#cuadro3{
+	border-color: black ;
+	border-width: thin;
+	border-style: solid;
+	float: left;
+	width: 10%;
+	height: 100px;
+	clear: right;
+}
+
+#cuadro4{
+	border-color: black ;
+	border-width: thin;
+	border-style: solid;
+	float: left;
+	width: 10%;
+	height: 100px;
+	clear: both;
+}
+
+#cuadro5{
+	border-color: black ;
+	border-width: thin;
+	border-style: solid;
+	float: left;
+	width: 10%;
+	height: 100px;
+	clear: both;
+}
+
+#cuadro6{
+	border-color: black ;
+	border-width: thin;
+	border-style: solid;
+	float: left;
+	width: 10%;
+	height: 100px;
+	clear: both;
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified"
+            >
+<xsd:element name="TVSCHEDULE">
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element ref="CHANNEL" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="NAME" type="xsd:string"/>
+    </xsd:complexType>
+</xsd:element>
+
+
+    <xsd:element name="CHANNEL">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="BANNER" type="xsd:string"/>
+                <xsd:element ref="DAY" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="CHAN" type="tipoCHAN"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="DAY">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="DATE" type="xsd:string"/>
+                <xsd:element ref="PROGRAMSLOT" maxOccurs="unbounded"/>
+                <xsd:choice>
+                    <xsd:element name="HOLIDAY" type="xsd:string" minOccurs="0"/>
+                </xsd:choice>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+
+    <xsd:element name="PROGRAMSLOT">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="TIME" type="xsd:string"/>
+                <xsd:element ref="TITLE" maxOccurs="1"/>
+                <xsd:element name="DESCRIPTION" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="TITLE" type="xsd:string">
+        <xsd:complexType>
+            <xsd:attribute name="RATING" type="xsd:string"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="tipoCHAN">
+            <xsd:choice>
+                <xsd:element name="Antena3" type="xsd:string"/>
+                <xsd:element name="Telecinco1" type="xsd:string"/>
+            </xsd:choice>
+    </xsd:complexType>
+
+
+</xsd:schema>

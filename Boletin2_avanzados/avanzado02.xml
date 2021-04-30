@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cat:catalogo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:cat="http://www.cebem.net/catalogoLibros"
+              xsi:schemaLocation="http://www.cebem.net/catalogoLibros catalogoLibros.xsd">
+
+    <cat:libro categoria="ficcion" stock="true" revisor="Jaime">
+        <cat:titulo>Los himbres que no amabanm a las mujeres</cat:titulo>
+        <cat:autor>Stieg Larson</cat:autor>
+        <cat:fecha>
+            <cat:mes>4</cat:mes>
+            <cat:año>2008</cat:año>
+        </cat:fecha>
+        <cat:isbn>978-84-233-4044-6</cat:isbn>
+        <cat:editor>Destino</cat:editor>
+    </cat:libro>
+
+    <cat:libro categoria="no ficcion" stock="false" revisor="Luis Rodrigo">
+        <cat:titulo>Java a través de ejemplos</cat:titulo>
+        <cat:autor>Jesús Bobadilla</cat:autor>
+        <cat:fecha>
+            <cat:mes>1</cat:mes>
+            <cat:año>2003</cat:año>
+        </cat:fecha>
+        <cat:isbn>84-7897-549-7</cat:isbn>
+        <cat:editor>Ra-Ma</cat:editor>
+    </cat:libro>
+
+</cat:catalogo>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<fac:facturas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:fac="http://www.cebem.net/Ejercicio5"
+           xsi:schemaLocation="http://www.cebem.net/Ejercicio5 Ejercicio5.xsd">
+<fac:factura>
+    <fac:datos_cliente idCliente="i-02">
+        <fac:nombre>Samuel</fac:nombre>
+        <fac:apellidos>
+            <fac:primer_apellido>Alonso</fac:primer_apellido>
+            <fac:segundo_apellido>Gil</fac:segundo_apellido>
+        </fac:apellidos>
+        <fac:dni>77010675M</fac:dni>
+        <fac:telefono>696550102</fac:telefono>
+
+    </fac:datos_cliente>
+
+    <fac:datos_factura>
+        <fac:resguardo_factura>
+            <fac:forma_pago>tarjeta</fac:forma_pago>
+            <fac:importe_total>50</fac:importe_total>
+        </fac:resguardo_factura>
+        <fac:alquileres>
+            <fac:pelicula>
+                <fac:titulo>Spiderman 3</fac:titulo>
+                <fac:genero>acción</fac:genero>
+                <fac:duracion>2 horas</fac:duracion>
+                <fac:actores>
+                    <fac:nombre>tobey </fac:nombre>
+                    <fac:apellidos>maguire</fac:apellidos>
+                </fac:actores>
+            </fac:pelicula>
+            <fac:fecha_devolucion>2005-04-01</fac:fecha_devolucion>
+            <fac:importe_total>15</fac:importe_total>
+        </fac:alquileres>
+        <fac:compras>
+            <fac:dvd>
+                <fac:titulo>Spiderman 2</fac:titulo>
+                <fac:fecha>2005-04-01</fac:fecha>
+                <fac:con_extras></fac:con_extras>
+            </fac:dvd>
+            <fac:cintas_video>
+                <fac:formato/>
+                <fac:sin_rebobinar></fac:sin_rebobinar>
+            </fac:cintas_video>
+        </fac:compras>
+    </fac:datos_factura>
+</fac:factura>
+
+    <fac:factura>
+        <fac:datos_cliente idCliente="i-03">
+            <fac:nombre>Nicolas</fac:nombre>
+            <fac:apellidos>
+                <fac:primer_apellido>Juncal</fac:primer_apellido>
+                <fac:segundo_apellido>Bernardez</fac:segundo_apellido>
+            </fac:apellidos>
+            <fac:dni>77010675M</fac:dni>
+            <fac:telefono>696550102</fac:telefono>
+
+        </fac:datos_cliente>
+
+        <fac:datos_factura>
+            <fac:resguardo_factura>
+                <fac:forma_pago>cash</fac:forma_pago>
+                <fac:importe_total>50</fac:importe_total>
+            </fac:resguardo_factura>
+            <fac:alquileres>
+                <fac:pelicula>
+                    <fac:titulo>Spiderman 2</fac:titulo>
+                    <fac:genero>acción</fac:genero>
+                    <fac:duracion>2 horas</fac:duracion>
+                    <fac:actores>
+                        <fac:nombre>tobey </fac:nombre>
+                        <fac:apellidos>maguire</fac:apellidos>
+                    </fac:actores>
+                </fac:pelicula>
+                <fac:fecha_devolucion>2005-04-01</fac:fecha_devolucion>
+                <fac:importe_total>15</fac:importe_total>
+            </fac:alquileres>
+            <fac:compras>
+                <fac:dvd>
+                    <fac:titulo>Spiderman 2</fac:titulo>
+                    <fac:fecha>2005-04-01</fac:fecha>
+                    <fac:con_extras></fac:con_extras>
+                </fac:dvd>
+                <fac:cintas_video>
+                    <fac:formato/>
+                    <fac:sin_rebobinar></fac:sin_rebobinar>
+                </fac:cintas_video>
+            </fac:compras>
+        </fac:datos_factura>
+    </fac:factura>
+
+
+
+
+</fac:facturas>

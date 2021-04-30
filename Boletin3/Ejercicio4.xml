@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<personas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="Ejercicio4.xsd">
+
+   <persona>
+       <nombre>Juan Pardo</nombre>
+       <nacimiento>
+           <dia>10</dia>
+           <mes>Abril</mes>
+           <año>1982</año>
+       </nacimiento>
+       <direccion>
+           <calle>Caoba 1</calle>
+           <poblacion>Madrid</poblacion>
+           <provincia>Madrid</provincia>
+           <cpostal>28005</cpostal>
+       </direccion>
+       <varon/>
+   </persona>
+
+
+    <persona>
+        <nombre>Juan Pardo</nombre>
+        <nacimiento>
+            <dia>10</dia>
+            <mes>Abril</mes>
+            <año>1982</año>
+        </nacimiento>
+        <direccion>
+            <calle>Caoba 1</calle>
+            <poblacion>Madrid</poblacion>
+            <provincia>Madrid</provincia>
+            <cpostal>28005</cpostal>
+        </direccion>
+        <hembra/>
+    </persona>
+</personas>
+
+

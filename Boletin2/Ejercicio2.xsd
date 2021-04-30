@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <!--elemento raiz-->
+    <xsd:element name="vehiculos">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="vehiculo" minOccurs="1" maxOccurs="unbounded"></xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--elemento vehiculo-->
+    <xsd:element name="vehiculo" >
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="nombre" type="xsd:string" minOccurs="1" maxOccurs="unbounded"></xsd:element>
+                <xsd:element name="modelo" type="xsd:string"></xsd:element>
+                <xsd:element ref="fabricacion"></xsd:element>
+                <xsd:element ref="modificaciones"></xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--elemento fabricacion-->
+    <xsd:element name="fabricacion">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="inicio" ></xsd:element>
+                <xsd:element ref="fin" ></xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--elemento inicio-->
+    <xsd:element name="inicio">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="dia" type="xsd:string"></xsd:element>
+                <xsd:element name="mes" type="xsd:string"></xsd:element>
+                <xsd:element name="anyo" type="xsd:string"></xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--elemento fin-->
+    <xsd:element name="fin">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="dia" type="xsd:string"></xsd:element>
+                <xsd:element name="mes" type="xsd:string"></xsd:element>
+                <xsd:element name="anyo" type="xsd:string"></xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--elemento modificaciones-->
+    <xsd:element name="modificaciones">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="modificacion" type="xsd:string" maxOccurs="unbounded" minOccurs="1"></xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+
+</xsd:schema>
+

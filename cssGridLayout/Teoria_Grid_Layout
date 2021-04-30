@@ -1,0 +1,101 @@
+Propiedad grid de css de posicionamiento para elementos:
+-Se pueden usar de varias formas:
+
+0- "Se establece un diseño general para todos los elementos y despúes se
+    especifica la posición de cada uno"
+
+    .box {
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
+    }
+
+    1-"La columna 1 va a ocupar el primer espacio
+    de la primera columna, va de la 1 a la 2 "
+
+      -grid-column-starts: 1
+      -grid-column-ends: 2
+      -grid-row-start: 1;
+      -grid-row-end: 2;
+
+
+    2-"También se puede colocar directamente
+    en otra posición" //EjemploLayout1.css
+
+      -grid-column-starts: 2
+      -grid-column-ends: 3
+
+
+    3-"Se puede hacer lo mismo de forma más sencilla en un fila separando
+    donde empieza y donde termina con una barra" //EjemploLayout2.css
+
+       -grid-column: 2 / 3;
+       -grid-row: 1 / 2;
+
+
+    4-"Se puede simplificar aún más poniéndolo directamente
+    así" //EjemploLayout3.css
+
+        -grid-area: 1 / 2 / 2 / 3;
+
+    5-"Se pueden poner elementos que ocupen espacios de otros, en este caso
+    el primer div ocupa un espacio de columna de más y va de la 1 a la 3"
+    //EjemploLayout4.css
+
+        grid-column: 1 / 3;
+        grid-row: 1;
+
+    6-"También se puede usar 'span' para identificar cuantos espacios
+    va a ocupar, en este caso también empieza en el 1 y ocupa 2 (el 1 y el 2)"
+    //EjemploLayout5.css
+
+        grid-column: 1 / span 2;
+
+    7-"Se pueden nombrar a las líneas en vez de referirse a ellas
+    con números indicándolo en el elemento común .box"
+        //EjemploLayout7.css
+
+        grid-template-columns: [col1-start] 100px [col2-start] 100px [col3-start]
+        100px [col3-end];
+
+        grid-template-rows: [row1-start] auto [row2-start] auto [row2-end];
+
+        grid-column: col1-start / col3-start;
+        grid-row: row1-start ;
+
+    8-"Puedes nombrar las columnas y usar el span"
+        //EjemploLayout8.css
+
+        grid-template-columns: [col] 100px [col] 100px [col] 100px [col] 100px ;
+        grid-template-rows: [row] auto [row] auto [row] ;
+
+        grid-column: col / span 2;
+        grid-row: row ;
+
+    9-"Puedes simplificar el número de filas y columnas poniendo
+    repeat en el elemento común"
+        //EjemploLayout9.css
+
+        grid-template-columns: repeat(4, [col] 100px ) ;
+        grid-template-rows: repeat(3, [row] auto );
+
+        grid-column: col / span 2;
+        grid-row: row ;
+
+    10-"Si no especificas una columna en el elemento común, el propio navegasdor
+    la creará, puedes especificar sus características el autocolumns, en este caso hay solo
+    3 columnas especificadas pero el navegaadro creará una
+    cuarta ya que hay 4 divs de columna"
+        //EjemploLayout9.css
+
+        grid-template-columns: 100px 100px 100px;
+        grid-auto-columns: 100px;
+
+        grid-column: 1 / 3;
+        grid-row: 1;
+
+
+
+

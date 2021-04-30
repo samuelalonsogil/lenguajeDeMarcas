@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		input{margin: 5px;};
+		div{
+			width: 35%;
+			margin:auto;
+		}
+	</style>
+	<title>Ejemplo Formularios</title>
+
+</head>
+<body>
+<!--comienzo de formulario-->
+<div>
+
+<h3>Formulario muy sencillo</h3>
+
+<form action="http://www.librosweb.es/maneja_formulario.php" method="post">  
+ <label>Nombre</label> <br/>
+<input type="text" name="nombre" value="" /> <br/>
+ <label>Contraseña</label> <br/>
+ <input type="password" name="contrasena" value="" /><br/>
+ <label>Puestos de trabajo buscados</label> <br/>
+<input name="puesto_directivo" type="checkbox" value="direccion"/> <label>Dirección</label>
+<br/>
+<input name="puesto_tecnico" type="checkbox" value="tecnico"/> <label>Técnico </label>
+<br/>
+<input name="puesto_empleado" type="checkbox" value="empleado"/> <label>Empleado</label>
+<label>Estado civil</label><br/>
+<br/>
+<input type="radio" name="civil" value="soltero" checked="checked" /> <label>soltero</label><br/>
+<input type="radio" name="civil" value="casado" /> <label>Mujer</label><br/>
+<input type="radio" name="civil" value="marchito"/> <label>Marchito</label><br/>
+<input type="submit" name="enviar" value="Enviar" />&nbsp;&nbsp;
+<input type="reset" name="limpiar" value="Borrar datos" /><br/>
+<input type="file" name="adjunto" /><br/>
+
+
+
+</form>
+</div>
+
+</body>
+</html>

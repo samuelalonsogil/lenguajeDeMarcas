@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<fac:facturacion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:fac="http://www.cebem.net/Ejercicio4"
+                 xsi:schemaLocation="http://www.cebem.net/Ejercicio5 Ejercicio4.xsd">
+    <fac:empresa>
+        <fac:razonsocial tipus="empresa">
+            <fac:nombre>Paquetees, SL</fac:nombre>
+            <fac:direccion>c/Truges, 12</fac:direccion>
+            <fac:codpostal>17760</fac:codpostal>
+            <fac:poblacion>Vilabertran</fac:poblacion>
+            <fac:NIF>B17818181NK</fac:NIF>
+        </fac:razonsocial>
+    </fac:empresa>
+    <fac:factura numero="12">
+        <fac:cliente codigo="234">
+            <fac:razonsocial tipus="persona">
+                <fac:nombre>Filomeno</fac:nombre>
+                <fac:apellido>Garcia</fac:apellido>
+                <fac:apellido>Puig</fac:apellido>
+                <fac:direccion>c/Pollastres, 23</fac:direccion>
+                <fac:codpostal>17600</fac:codpostal>
+                <fac:poblacion>Figueruelas</fac:poblacion>
+                <fac:DNI>40444444-M</fac:DNI>
+            </fac:razonsocial>
+        </fac:cliente>
+        <fac:recibo numero="23">
+            <fecha>12-10-2010</fecha>
+            <totalrecibo>524</totalrecibo>
+            <lineas>
+                <producto codigo="11115">
+                    <descripcion>Paquete de chocolate negro</descripcion>
+                    <cantidad>1</cantidad>
+                    <preciounitario>100</preciounitario>
+                </producto>
+                <producto codigo="11112">
+                    <descripcion>Paquete de chocolate blanco</descripcion>
+                    <cantidad>4</cantidad>
+                    <preciounitario>106</preciounitario>
+                </producto>
+            </lineas>
+        </fac:recibo>
+        <fac:recibo numero="28">
+            <fecha>14-10-2010</fecha>
+            <totalrecibo>220</totalrecibo>
+
+            <lineas>
+                <producto codigo="11111">
+                    <descripcion>Paquete de chocolate con leche</descripcion>
+                    <cantidad>2</cantidad>
+                    <preciounitario>110</preciounitario>
+                </producto>
+            </lineas>
+        </fac:recibo>
+        <fac:fecha>15-10-2010</fac:fecha>
+        <fac:subtotal>744</fac:subtotal>
+        <fac:iva>18</fac:iva>
+        <fac:total>877,92</fac:total>
+    </fac:factura>
+    <fac:factura numero="13">
+        <cliente>
+            <razonsocial tipus="empresa">
+                <nombre>Telemonica, SA</nombre>
+                <direccion>c/ Gran Via, 28</direccion>
+                <codpostal>28013</codpostal>
+                <poblacion>Madrid</poblacion>
+                <NIF>A88888888</NIF>
+            </razonsocial>
+            <idioma>castellano</idioma>
+            <contacto>Manolo Antena</contacto>
+            <contacto>Marcial Porras</contacto>
+        </cliente>
+        <recibo numero="24">
+            <fecha>12-10-2010</fecha>
+            <totalrecibo>5000</totalrecibo>
+            <lineas>
+                <producto codigo="11115">
+                    <descripcion>Paquete de chocolate negro</descripcion>
+                    <cantidad>50</cantidad>
+                    <preciounitario>100</preciounitario>
+                </producto>
+            </lineas>
+        </recibo>
+        <fecha>15-10-2010</fecha>
+        <subtotal>5000</subtotal>
+        <iva>18</iva>
+        <total>5900</total>
+    </fac:factura>
+    <fac:factura numero="14">
+        <cliente>
+            <razonsocial tipus="empresa">
+                <nombre>MenjaChocolate, SL</nombre>
+                <direccion/>
+                <codpostal>17600</codpostal>
+                <poblacion>Figueruelas</poblacion>
+                <NIF>A177777777</NIF>
+            </razonsocial>
+            <contacto>Jimmy Jazz</contacto>
+        </cliente>
+        <recibo numero="25">
+            <fecha>13-10-2010</fecha>
+            <totalrecibo>110</totalrecibo>
+            <lineas>
+                <producto codigo="11111">
+                    <descripcion>Paquete de chocolate con leche</descripcion>
+                    <cantidad>1</cantidad>
+                    <preciounitario>110</preciounitario>
+                </producto>
+            </lineas>
+        </recibo>
+        <recibo numero="26">
+            <fecha>14-10-2010</fecha>
+            <totalrecibo>110</totalrecibo>
+            <lineas>
+                <producto codigo="11111">
+                    <descripcion>Paquete de chocolate con leche</descripcion>
+                    <cantidad>1</cantidad>
+                    <preciounitario>110</preciounitario>
+                </producto>
+            </lineas>
+        </recibo>
+        <recibo numero="27">
+            <fecha>14-10-2010</fecha>
+            <totalrecibo>110</totalrecibo>
+            <lineas>
+                <producto codigo="11111">
+                    <descripcion>Paquete de chocolate con leche</descripcion>
+                    <cantidad>1</cantidad>
+                    <preciounitario>110</preciounitario>
+                </producto>
+            </lineas>
+        </recibo>
+        <fecha>15-10-2010</fecha>
+        <subtotal>330</subtotal>
+        <iva>18</iva>
+        <total>389,4</total>
+    </fac:factura>
+</fac:facturacion>

@@ -1,0 +1,35 @@
+body {
+    margin: 40px;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(6, 100px ) ;
+    background-color: #fff;
+    color: #444;
+}
+
+.box {
+    background-color: #111010;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
+}
+
+.box2 {
+    background-color: #534D4DFF;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
+    opacity: 0.5;
+}
+
+.B{
+    grid-column: 3/6; grid-row: 2;
+    outline: 2px solid red;
+    z-index: 10;
+
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--SOLUCION : declaro un nuevo elemento raiz llamado alumno
+que englobe a los datos personales y docentes-->
+
+<!-- EN xsi schema location SE INDICA URL Y ESQUEMA-->
+<alumno xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="alumno.xsd">
+
+    <per:persona
+            xmlns:per="http://www.prueba.es/persona"
+            nacimiento="1999-10-20">
+        <per:datos>
+            <per:nombre>Pepe</per:nombre>
+            <per:apellidos>Garcia</per:apellidos>
+            <per:dni>25390952X</per:dni>
+        </per:datos>
+        <per:comentario>repetidor</per:comentario>
+    </per:persona>
+
+    <!--elemento raiz bien formado-->
+    <doc:docencia xmlns:doc="http://www.prueba.es/docencia">
+        <doc:grupo>1ASIR</doc:grupo>
+        <doc:asignaturas>
+            <doc:asignatura>
+                <doc:nombre>Lenguajes de Marcas
+                </doc:nombre>
+                <doc:horas>4
+                </doc:horas>
+                <doc:profesor>Juan Moreno
+                </doc:profesor>
+            </doc:asignatura>
+            <doc:asignatura>
+                <doc:nombre>Fundamentos de Hardware
+                </doc:nombre>
+                <doc:horas>3
+                </doc:horas>
+                <doc:profesor>Virginia López
+                </doc:profesor>
+            </doc:asignatura>
+        </doc:asignaturas>
+    </doc:docencia>
+
+</alumno>

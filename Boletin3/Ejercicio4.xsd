@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified"
+            >
+
+
+    <!--elemento raíz personas-->
+    <xsd:element name="personas">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="persona" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--elemento persona-->
+    <xsd:element name="persona">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="nombre" type="tipoNombre"/>
+                <xsd:element ref="nacimiento" minOccurs="0"/>
+                <xsd:element ref="direccion" minOccurs="1" maxOccurs="unbounded"/>
+                <!--a elegir uno de los dos-->
+                <xsd:choice>
+                    <!--ambos son elementos vacios-->
+                    <xsd:element name="varon" />
+                    <xsd:element name="hembra" />
+                </xsd:choice>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+
+    <!--elemento nacimiento-->
+    <xsd:element name="nacimiento">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="dia" type="tipoDia"/>
+                <xsd:element name="mes" type="tipoMes"/>
+                <xsd:element name="año" type="tipoAño"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--declaracion tipoDia-->
+    <xsd:simpleType name="tipoDia">
+        <xsd:restriction base="xsd:positiveInteger">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="31"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!--declaracion tipoMes-->
+    <xsd:simpleType name="tipoMes">
+        <xsd:restriction base="xsd:string">
+
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!--declaracion tipoAño-->
+    <xsd:simpleType name="tipoAño">
+        <xsd:restriction base="xsd:positiveInteger">
+            <xsd:minInclusive value="1900"/>
+            <xsd:maxInclusive value="2021"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!--elemento direccion-->
+    <xsd:element name="direccion">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="calle" type="tipoNombre"/>
+                <xsd:element name="poblacion" type="tipoNombre"/>
+                <xsd:element name="provincia" type="tipoNombre"/>
+                <xsd:element name="cpostal" type="tipoCodigoPOstal"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--tipoNombre-->
+    <xsd:simpleType name="tipoNombre">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!--tipoCodigoPOstal-->
+    <xsd:simpleType name="tipoCodigoPOstal">
+        <xsd:restriction base="xsd:int">
+            <xsd:totalDigits value="5"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+
+
+</xsd:schema>

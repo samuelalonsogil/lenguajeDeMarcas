@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified"
+            xmlns:doc="http://www.prueba.es/docencia"
+            targetNamespace="http://www.prueba.es/docencia">
+
+    <!--elemento raiz-->
+    <xsd:element name="docencia">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="grupo" type="xsd:string"></xsd:element>
+                <xsd:element ref="doc:asignaturas"></xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+
+    <!--declaracion elemento asignaturas-->
+    <xsd:element name="asignaturas">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="asignatura" type="doc:asignatura" maxOccurs="unbounded"></xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+
+        <xsd:complexType name="asignatura">
+            <xsd:sequence>
+                <xsd:element name="nombre" type="xsd:string"></xsd:element>
+                <xsd:element name="horas" type="xsd:string"></xsd:element>
+                <xsd:element name="profesor" type="xsd:string"></xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+
+
+</xsd:schema>

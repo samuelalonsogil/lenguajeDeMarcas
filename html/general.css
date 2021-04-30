@@ -1,0 +1,44 @@
+
+
+#titulo{
+    color: purple;
+    background-color: yellow; 
+    font-family: arial, verdanda, sans;
+    font-style: italic;
+    padding: 20px 20px 20px 20px;
+    border: thick black solid;
+    
+
+}
+
+
+
+body{
+    background: black  url("ashoka.PNG")  no-repeat  fixed 0px 0px;
+    
+    
+    font: normal  bold 120% arial, verdanda;
+
+    margin: 100px 40px 10px 70px;
+
+}
+
+#darth{
+    color: white;
+    clear: left;
+
+}
+
+
+
+a{color: blue}
+a.red{color: red;}
+
+span.plagueis{color: red;}
+
+#obiw{float: left;
+    width: 20%;
+    height: 20%;
+    
+
+}

@@ -1,0 +1,67 @@
+<!ELEMENT catalogoLibro (libro)*>
+        <!ELEMENT libro (titulo, autor+, fecha, ISBN, editor)>
+        <!ATTLIST libro
+
+
+                categoria (autobiografia | noficcion | ficcion) #REQUIRED
+                stock (true | false) “false”
+                revisor CDATA “”>
+
+        <!ELEMENT titulo (#PCDATA)>
+        <!ELEMENT autor (#PCDATA)>
+        <!ELEMENT fecha(mes?, anyo)>
+        <!ELEMENT ISBN (#PCDATA)>
+        <!ELEMENT editor (#PCDATA)>
+        <!ELEMENT mes (#PCDATA)>
+        <!ELEMENT anyo (#PCDATA)>
+
+<!--Avanzado02 - Convertir el DTD del fichero avanzado02DTD.txt adjunto en un XML schema,
+teniendo en cuenta lo siguiente:
+ El esquema se guarda en un archivo de nombre “catalogo_libros.xsd” 
+
+ Los elementos y atributos definidos en el esquema forma un espacio de nombres
+llamado “http://www.iesluisbraille.es/1ASIR/catalogo_libros” 
+
+ Se debe forzar a que los documentos instancia, los elementos y los atributos de este
+espacio de nombres estén cualificados con un prefijo 
+
+ Para los tipos complejos se deben utilizar referencias a elementos 
+
+ Se deben definir dos tipos de datos simples para el mes (“tipoMes”) y el año
+(“tipoAnyo”), como restricciones del tipo “positiveInteger”. El mes tiene que ser un valor
+comprendido entre 1 y 12, y el año entre 1900 y 2011. 
+
+ También se define el tipo “tipoNombre”, que será el utilizado para los elementos “titulo”,
+“autor” y “editor”. Se trata de una restricción del tipo “string” en la que los valores tienen
+entre 0 y 100 caracteres. 
+
+ Del mismo modo se define el tipo “tipoISBN”, para el elemento ISBN, como un tipo
+string que tiene entre 13 y 17 caracteres 
+Escribir un documento instancia XML que cumpla el esquema con los siguientes datos: 
+ 
+Titulo Autor(es) Fecha ISBN Editor Categ. Stock Revisor
+Los hombres
+que no amaban a
+las mujeres
+
+Stieg Larsson 2008 978-84-233-
+4044-6
+
+Destino Ficción Sí  
+
+Java a
+través de
+ejemplos
+
+Jesús Bobadill
+a,
+Adela Sancho
+Enero
+2003
+84-7897-549-7 Ra-Ma No
+ficción
+No Luis
+Rodrigo
+
+Probar también a insertar datos que no cumplan el schema y ver qué pasa al intentar validar el
+documento.-->

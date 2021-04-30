@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified"
+
+            targetNamespace="http://www.cebem.net/Ejercicio5"
+            xmlns="http://www.cebem.net/Ejercicio5">
+
+    <!--elemento raiz facturas-->
+    <xsd:element name="facturas">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="factura" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--elemento factura-->
+    <xsd:element name="factura">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="datos_cliente"/>
+                <xsd:element ref="datos_factura"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--elemento datos_cliente-->
+    <xsd:element name="datos_cliente">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="nombre" type="xsd:string" />
+                <xsd:element ref="apellidos"/>
+                <xsd:element name="dni" type="xsd:string"/>
+                <xsd:element name="telefono" type="xsd:string" maxOccurs="1"/>
+            </xsd:sequence>
+            <xsd:attribute name="idCliente" use="required" type="xsd:ID"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--elemento apellidos-->
+    <xsd:element name="apellidos">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="primer_apellido" type="xsd:string"/>
+                <xsd:element name="segundo_apellido" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--elemento datos_factura-->
+    <xsd:element name="datos_factura">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="resguardo_factura" minOccurs="1"/>
+                <xsd:element ref="alquileres"/>
+                <xsd:element ref="compras"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--elemento resguardo_factura-->
+    <xsd:element name="resguardo_factura">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="forma_pago" type="xsd:string"/>
+                <xsd:element name="importe_total" type="xsd:float"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--elemento alquileres-->
+    <xsd:element name="alquileres">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="pelicula" maxOccurs="unbounded"/>
+                <xsd:element name="fecha_devolucion" type="xsd:date"/>
+                <xsd:element name="importe_total" type="xsd:float"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+
+    <!--elemento pelicula-->
+    <xsd:element name="pelicula">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="titulo" maxOccurs="unbounded" type="xsd:string"/>
+                <xsd:element name="genero" type="xsd:string"/>
+                <xsd:element name="duracion" type="xsd:string"/>
+                <xsd:element ref="actores" maxOccurs="3"/>
+            </xsd:sequence>
+            <xsd:attribute name="idPelicula" type="xsd:ID"/>
+            <xsd:attribute name="valoracion" type="xsd:positiveInteger"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--elemento actores-->
+    <xsd:element name="actores">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="nombre" type="xsd:string"/>
+                <xsd:element name="apellidos" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--elemento compras-->
+    <xsd:element name="compras">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="dvd"/>
+                <xsd:element ref="cintas_video"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--elemento dvd-->
+    <xsd:element name="dvd">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="titulo" type="xsd:string"/>
+                <xsd:element name="fecha" type="xsd:date"/>
+                <xsd:choice>
+                    <xsd:element name="con_extras" type="xsd:string"/>
+                    <xsd:element name="sin_extras" type="xsd:string"/>
+                </xsd:choice>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--elemento cintas_video-->
+    <xsd:element name="cintas_video">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="formato" maxOccurs="1"/>
+                <xsd:choice>
+                    <xsd:element name="rebobinada" type="xsd:string"/>
+                    <xsd:element name="sin_rebobinar" type="xsd:string"/>
+                </xsd:choice>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--elemento formato-->
+    <xsd:element name="formato">
+        <xsd:complexType>
+            <xsd:attribute name="formato"/>
+        </xsd:complexType>
+    </xsd:element>
+
+
+
+
+</xsd:schema>

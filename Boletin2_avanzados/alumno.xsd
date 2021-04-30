@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        elementFormDefault="qualified"
+        xmlns:per="http://www.prueba.es/persona"
+        xmlns:doc="http://www.prueba.es/docencia">
+
+    <!--SE PUEDEN IMPORTAR ESQUEMAS QUE EXPLIQUEN PARTES INTERNAS del XML-->
+    <xsd:import namespace="http://www.prueba.es/persona" schemaLocation="esquema_persona.xsd"/>
+    <xsd:import namespace="http://www.prueba.es/docencia" schemaLocation="esquemaDocencia.xsd"/>
+
+    <!--elemento raíz-->
+    <xsd:element name="alumno">
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element ref="per:persona"></xsd:element>
+            <xsd:element ref="doc:docencia"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    </xsd:element>
+
+
+</xsd:schema>
