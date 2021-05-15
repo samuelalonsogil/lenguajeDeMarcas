@@ -1,10 +1,353 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.82.0">
+    <title>Carousel Template · Bootstrap v5.0</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
 </head>
 <body>
-$END$
+
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+
+
+            <!--link de wiki -->
+            <a class="navbar-brand" href="https://es.wikipedia.org/wiki/Star_Wars" style="color: yellow">STAR WARS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+
+                        <!--link de home -->
+                        <a class="nav-link active" aria-current="page" href="http://localhost:63342/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+
+        <!--flechas del carrusel -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+                    aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <!--carrusel-->
+        <div class="carousel-inner">
+
+            <!--primer elemento del  carrusel-->
+            <div class="carousel-item active">
+                <img alt="prequelas" src="imagenes/prequels.jpg" width="50%" height="50%">
+
+                <div class="container">
+                    <div class="carousel-caption text-start" > <!--propiedades del texto -->
+
+                        <h1 >Prequelas</h1>
+                        <p>La época de la República</p>
+                        <p><a class="btn btn-lg btn-primary" href="https://es.wikipedia.org/wiki/Star_Wars#Trilog%C3%ADa_de_precuelas">info</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="imagenes/originalTrilogy.png" width="70%" height="70%" alt="originals">
+                <div class="container">
+                    <div class="carousel-caption text-start"> <!--propiedades del texto -->
+                        <h1>Trilogía original</h1>
+                        <p>La época del Imperio</p>
+                        <p><a class="btn btn-lg btn-primary" href="https://es.wikipedia.org/wiki/Star_Wars#Trilog%C3%ADa_original">info</a></p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="carousel-item">
+
+                <img  src="imagenes/theMandalorian.jpg" width="20%" height="20%" alt="theMandalorian">
+
+                <div class="container" >
+                    <div class="carousel-caption text-start" style="color: black"> <!--propiedades del texto -->
+                        <h1>The Mandalorian</h1>
+                        <p>Spin-off después de la trilogía original</p>
+                        <p><a class="btn btn-lg btn-dark" href="https://es.wikipedia.org/wiki/The_Mandalorian">info</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--botones de control-->
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <h1 align="center" style= "color: #1c1f23" >Personajes más importantes</h1>
+    <br>
+    <br>
+
+    <div class="container marketing">
+
+        <!-- Three columns of text below the carousel -->
+
+        <div class="row featurette">
+
+            <!--primera columna-->
+            <div class="col-lg-4" >
+
+                <!--IMAGEN-->
+                <img  src="imagenes/obiWan.jpg" class="rounded-circle" alt="obi-wan"
+                      width="140" height="140" role="img" aria-label="Placeholder: 140x140">
+                <!--IMAGEN-->
+
+                <!--TEXTO-->
+                <h2>Obi-Wan Kenobi</h2>
+                <p class="lead">Caballero de la orden jedi y personaje más querido por los fans y maestro de
+                    Anakin y Luke Skywalker. Interpretado por Ewan Mcgregor</p>
+
+                <p class="lead" id="desplegar" style="display: none";>Después de las Guerras Clon es obligado a exiliarse
+                a Tatooine y vivir en su desierto a la espera de encontrarse con su objetivo
+
+                        <!--BOTONES-->
+                    <br>
+                    <a class="btn btn-sm btn-outline-info" href="#">View details &raquo;</a>
+                    <input type="button" onclick="vermas('menos');" value="Leer menos" class="btn btn-sm btn-outline-warning">
+                    <br>
+                        <!--BOTONES-->
+                </p>
+
+                    <!--BOTÓN-->
+                <input type="button" onclick="vermas('mas');" value="Desplegar" class="btn btn-sm btn-outline-dark">
+
+                <!--TEXTO-->
+                    <!--BOTÓN-->
+            </div>
+
+            <!--segunda columna-->
+            <div class="col-lg-4">
+                <!--IMAGEN-->
+                <img  src="imagenes/anakin.jpg" class="rounded-circle" alt="anakin"
+                      width="140" height="140" role="img" aria-label="Placeholder: 140x140">
+                <!--IMAGEN-->
+
+                <!--TEXTO-->
+                <h2>Anakin Skywalker</h2>
+                <p class="lead">Caballero de la orden jedi y protagonista de las prequelas, entrenado por Obi-Wan
+                y elegido para traer el equilibrio a la fuerza. Interpretado por Hayden Christens</p>
+
+                <p class="lead" id="desplegar" style="display: none";>Después de las Guerras Clon cae al lado oscuro
+                    y empieza su nueva vida como Darth Vader
+
+                <!--BOTONES-->
+                <br>
+                <a class="btn btn-sm btn-outline-danger" href="#">View details &raquo;</a>
+                <input type="button" onclick="vermas('menos');" value="Leer menos" class="btn btn-sm btn-outline-warning">
+                <br>
+                <!--BOTONES-->
+
+                </p>
+
+                <!--TEXTO-->
+
+                <!--BOTÓN-->
+                <input type="button" onclick="vermas('mas');" value="Desplegar" class="btn btn-sm btn-outline-dark">
+                <!--BOTÓN-->
+            </div>
+
+            <!--tercera columna-->
+
+            <div class="col-lg-4">
+                    <!--IMAGEN-->
+                    <img  src="imagenes/ahsoka.jpg" class="rounded-circle" alt="ahsoka"
+                          width="140" height="140" role="img" aria-label="Placeholder: 140x140">
+                    <!--IMAGEN-->
+
+                    <!--TEXTO-->
+                    <h2>Ahsoka Tano</h2>
+                    <p class="lead">Caballera jedi y padawan de Anakin durante las Guerras Clon.
+                    Interpretada por Rosario Dawson en el spin-off "The Mandalorian"</p>
+                    <br>
+                <p class="lead" id="desplegar" style="display: none";>Después de la orden 66 se ve obligada a escapar
+                    y a refugiarse con algunos clones desertores y con los grupos rebeldes.
+
+                    <!--BOTONES-->
+                    <br>
+                    <a class="btn btn-sm btn-outline-secondary" href="#">View details &raquo;</a>
+                    <input type="button" onclick="vermas('menos');" value="Leer menos" class="btn btn-sm btn-outline-warning">
+                    <br>
+                    <!--BOTONES-->
+
+                </p>
+
+                <!--TEXTO-->
+
+                <!--BOTÓN-->
+                <input type="button" onclick="vermas('mas');" value="Desplegar" class="btn btn-sm btn-outline-dark">
+                <!--BOTÓN-->
+            </div>
+                </div>
+        </div><!-- /.row -->
+
+
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider">
+
+        <h1 align="center" style="color:#1c1f23">Menciones honoríficas</h1>
+        <br>
+
+        <div class="row featurette" >
+
+            <!--TEXTO-->
+            <div class="col-md-7" style="background-color: #1c1f23" >
+                <h2 class="featurette-heading" align="center" style="color: #d3d6d8">The mandalorian</h2>
+                <p class="lead" align="center" style="font-size: xx-large" >El mandaloriano, la nueva serie del universo Star Wars de la mano de Disney+
+                se convirtió rápidamente en uno de los personajes favoritos de los fans y en una de las mejores producciones de la franquicia.
+                   <br> <a class="btn btn-sm btn-danger" href="TheMandalorian.html" target="_blank">View details &raquo;</a></p>
+            </div>
+            <!--TEXTO-->
+
+            <!--IMAGENES-->
+            <div class="col-md-5">
+                <img  src="imagenes/mandalorian.jpg"  alt="mando"
+                      width="500" height="500" role="img" aria-label="Placeholder: 500x500">
+            </div>
+            <!--IMAGENES-->
+
+
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette" style="background-color: #1c1f23">
+
+            <!--TEXTO-->
+            <div class="col-md-7 order-md-2" style="background-color: #1c1f23">
+                <h2 class="featurette-heading" align="center" style="color: #d3d6d8">Capitán Rex</h2>
+                <p class="lead" align="center" style="font-size: xx-large" >Lider del escuadrón clon 501, compañero leal de Ahsoka y Anakin
+                    <br> <a class="btn btn-sm btn-danger" >View details &raquo;</a></p>
+            </div>
+            <!--TEXTO-->
+
+            <!--IMAGENES-->
+            <div class="col-md-5 order-md-1">
+                <div class="col-md-5">
+                    <img  src="imagenes/rex.jpg"  alt="rex"
+                          width="500" height="500" role="img" aria-label="Placeholder: 500x500">
+                </div>
+            </div>
+            <!--IMAGENES-->
+
+
+        </div>
+
+        <hr class="featurette-divider">
+
+
+        <div class="row featurette">
+
+            <!--TEXTO-->
+            <div class="col-md-7" style="background-color: #1c1f23">
+                <h2 class="featurette-heading" align="center" style="color: #d3d6d8">Darth Vader</h2>
+                <p class="lead" align="center" style="font-size: xx-large" >El temible caballero oscuro del Imperio, leal a las órdenes del emperador
+                    y los restos de lo que un día fue Anakin Skywalker
+                    <br> <a class="btn btn-sm btn-danger" href="#">View details &raquo;</a></p>
+            </div>
+            <!--TEXTO-->
+
+            <!--IMAGENES-->
+            <div class="col-md-5">
+                <img  src="imagenes/vader.jpg"  alt="vader"
+                      width="500" height="500" role="img" aria-label="Placeholder: 500x500">
+            </div>
+            <!--IMAGENES-->
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+
+    </div><!-- /.container -->
+
+
+    <!-- FOOTER -->
+    <footer class="container">
+        <p class="btn btn-outline-secondary"><a href="#">Back to top</a></p>
+        <p>&copy; 2021 The ultra-company &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+</main>
+
+<!--SCRIPTS-->
+
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function vermas(id) {
+        if (id == "mas") {
+            document.getElementById("desplegar").style.display = "block";
+            document.getElementById("mas").style.display = "none";
+        } else {
+            document.getElementById("desplegar").style.display = "none";
+            document.getElementById("mas").style.display = "inline";
+        }
+    }
+</script>
+
+
+
 </body>
 </html>
