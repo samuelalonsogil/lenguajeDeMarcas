@@ -1,0 +1,103 @@
+.con {
+    border: 1px solid red;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.fil {
+    border: 1px dotted green;
+    margin: 5px;
+}
+
+.colo {
+    border: 1px dashed blue;
+    background-color: azure;
+
+
+
+}
+
+/*@media(min-width: TAMAÑO EN PIXELES) {}*/
+
+@media(max-width: 576px) {
+    /*hasta el tamaño indicado*/
+    body{background-color: pink;}
+    .cabecera{
+        text-align: center;
+        background-color: coral}
+    .primeraFila{
+        text-align: left;
+        padding: 20px;
+        background-color: red;}
+    .segundaFila{
+        text-align: center;
+        padding: 20px;
+        background-color: deepskyblue}
+    .terceraFila{
+        text-align: right;
+        padding: 20px;
+        background-color: red}
+    .pie1{
+        text-align: center;
+        background-color: yellow}
+    .pie2{
+        text-align: center;
+        background-color: yellow}
+}
+
+
+@media(min-width: 576px) and (max-width: 776px) {
+    /*hasta el tamaño indicado*/
+    body{background-color: aliceblue;}
+    .cabecera{
+        text-align: left;
+        background-color: coral}
+    .primeraFila{
+        text-align: left;
+        padding: 20px;
+        background-color: red;}
+    .segundaFila{
+        text-align: right;
+        padding: 20px;
+        background-color: deepskyblue}
+    .terceraFila{
+        text-align: center;
+        padding: 20px;
+        background-color: lawngreen}
+    .pie1{
+        text-align: center;
+        background-color: yellow}
+    .pie2{
+        text-align: center;
+        background-color: yellow}
+}
+
+
+@media(min-width: 776px){
+    /*hasta el tamaño indicado*/
+    body{background-color: greenyellow;}
+    .cabecera{
+        text-align: center;
+        background-color: coral}
+    .primeraFila{
+        text-align: center;
+        padding: 20px;
+        background-color: red;
+        font-size: x-large;}
+    .segundaFila{
+        text-align: center;
+        padding: 20px;
+        background-color: red;
+        font-size: x-large}
+    .terceraFila{
+        text-align: center;
+        padding: 20px;
+        background-color: red;
+        font-size: x-large}
+    .pie1{
+        text-align: right;
+        background-color: yellow}
+    .pie2{
+        text-align: left;
+        background-color: yellow}
+}

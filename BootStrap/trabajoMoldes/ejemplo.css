@@ -1,0 +1,19 @@
+body{
+
+    background-image: url("kameHouse.png");
+    background-size: cover;
+}
+
+.encabezado{
+    background-color: rebeccapurple;
+}
+
+.centrar{
+    margin-left:auto ;
+    margin-right: auto;
+    display: block;
+
+}
+
+
+
